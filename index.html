@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freepik Fun: A Child's Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', 'Marker Felt', 'Chalkboard SE', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #e0f7fa, #f8bbd0, #bbdefb);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 8px solid #ff9800;
+        }
+        
+        header {
+            background: linear-gradient(90deg, #ff5722, #ff9800, #ffc107);
+            text-align: center;
+            padding: 30px 20px;
+            position: relative;
+            border-bottom: 8px dotted #fff;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: white;
+            text-shadow: 3px 3px 0 #e64a19;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 0 #e64a19;
+        }
+        
+        .treasure-chest {
+            width: 150px;
+            height: 120px;
+            background: #ffca28;
+            margin: 0 auto 20px;
+            border-radius: 15px 15px 5px 5px;
+            position: relative;
+            border: 8px solid #ff9800;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+        }
+        
+        .treasure-chest::before {
+            content: "";
+            position: absolute;
+            top: -15px;
+            left: -10px;
+            right: -10px;
+            height: 20px;
+            background: #ff9800;
+            border-radius: 10px;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #ffeb3b, #ffc107);
+            border: 6px dashed #ff5722;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .warning-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #d32f2f;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 0 #fff;
+        }
+        
+        .warning-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .warning-item {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            border: 4px solid #ff9800;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .warning-item h3 {
+            color: #ff5722;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #ff5722;
+            margin: 30px 0 20px;
+            text-shadow: 1px 1px 0 #ffccbc;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 8px;
+            background: linear-gradient(90deg, #ff5722, #ff9800, #ffc107);
+            border-radius: 4px;
+            margin: 10px auto;
+        }
+        
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            padding: 0 20px 30px;
+        }
+        
+        .step-card {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            background: white;
+            border-radius: 20px;
+            padding: 25px 20px;
+            border: 5px solid #bbdefb;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-color: #64b5f6;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            width: 50px;
+            height: 50px;
+            background: #ff9800;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            border: 4px solid white;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+        }
+        
+        .step-title {
+            color: #1976d2;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .icon {
+            font-size: 2rem;
+        }
+        
+        .rules {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 20px 30px;
+        }
+        
+        .rule {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            border: 5px solid #c8e6c9;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .rule::before {
+            content: "✨";
+            position: absolute;
+            top: -20px;
+            right: -10px;
+            font-size: 5rem;
+            opacity: 0.3;
+            transform: rotate(20deg);
+        }
+        
+        .rule-title {
+            color: #388e3c;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .for-grownups {
+            background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+            padding: 30px;
+            margin: 30px 20px;
+            border-radius: 20px;
+            border: 5px solid #1976d2;
+        }
+        
+        .for-grownups h2 {
+            text-align: center;
+            color: #0d47a1;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .tip {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            border: 3px solid #64b5f6;
+        }
+        
+        .tip h3 {
+            color: #0d47a1;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        footer {
+            background: linear-gradient(90deg, #5c6bc0, #3949ab);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 1.4rem;
+            text-shadow: 1px 1px 0 #283593;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .step-card {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Freepik Fun: A Child's Guide to Finding Awesome Pictures!</h1>
+            <p class="subtitle">Your Treasure Map to Amazing Images 🗺️✨</p>
+            <div class="treasure-chest">
+                <i class="fas fa-gem"></i>
+            </div>
+        </header>
+        
+        <div class="warning-box">
+            <h2 class="warning-title">Important Safety Rules First! (Super Important!)</h2>
+            <div class="warning-content">
+                <div class="warning-item">
+                    <h3><i class="fas fa-user-friends"></i> Grown-Up Helper</h3>
+                    <p>You <strong>NEED</strong> a parent, teacher, or another trusted adult with you. They'll help with tricky words, clicking the right buttons, and making sure everything is safe and okay to use.</p>
+                </div>
+                <div class="warning-item">
+                    <h3><i class="fas fa-tag"></i> Free Stuff vs. Paid Stuff</h3>
+                    <p>Freepik has lots of FREE pictures, but some cost money ("Premium"). <strong>NEVER</strong> click on anything that asks for money or credit card info. Stick to the FREE stuff and let your grown-up helper know if you see anything confusing.</p>
+                </div>
+                <div class="warning-item">
+                    <h3><i class="fas fa-ad"></i> Ads Everywhere!</h3>
+                    <p>Websites sometimes have tricky buttons that look like part of the game but are actually ads. <strong>Point to the button you want to click and ask your grown-up helper "Is this the right one?"</strong> before clicking!</p>
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Let's Go on a Freepik Hunt! 🕵️‍♀️</h2>
+        <div class="steps">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3 class="step-title"><i class="fas fa-map icon"></i> Open the Treasure Map</h3>
+                <p>Ask your grown-up helper to open a web browser (like Chrome, Safari, or Edge).</p>
+                <p>Type <code>www.freepik.com</code> into the address bar at the very top and press Enter. <em>Ta-da!</em> You're on Freepik!</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3 class="step-title"><i class="fas fa-search icon"></i> What Treasure Are You Hunting For?</h3>
+                <p>See the big search bar at the top? It's like a magic question box!</p>
+                <p>Think about what picture you need. Is it a <strong>dinosaur</strong>? 🦕 A <strong>spaceship</strong>? 🚀 A <strong>smiling sun</strong>? ☀️</p>
+                <p>Type your word into the search box. Ask your helper to spell it if you need to.</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3 class="step-title"><i class="fas fa-binoculars icon"></i> Explore the Treasure Chest!</h3>
+                <p>Whoa! Look at all the pictures that popped up! Scroll down using your mouse or the down arrow on the keyboard to see more and more.</p>
+                <p>See pictures you like? Click on them to see a bigger version. Cool, right?</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3 class="step-title"><i class="fas fa-check-circle icon"></i> Find the Perfect Treasure</h3>
+                <p>When you find THE picture you want, click on it so it's big on your screen.</p>
+                <p><strong>Super Important Check:</strong> Look carefully near the picture. <strong>You MUST see the word "FREE"</strong> clearly written on it. If it says "Premium" or has a little crown 👑, that one costs money. <strong>Only choose pictures that say "FREE"!</strong> Tell your helper if you're not sure.</p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <h3 class="step-title"><i class="fas fa-download icon"></i> Grab Your Treasure!</h3>
+                <p>Found a FREE picture you love? Awesome! Look for the big green button that says <strong>"Download"</strong>.</p>
+                <p><strong>Point to the button and ask your grown-up helper: "Can I click this Download button?"</strong> They will say yes if it's safe!</p>
+                <p>Click the <strong>"Download"</strong> button. A new window might pop up with a countdown. Just wait patiently. <strong>Do NOT click any other buttons!</strong></p>
+            </div>
+            
+            <div class="step-card">
+                <div class="step-number">6</div>
+                <h3 class="step-title"><i class="fas fa-folder-open icon"></i> Where Did Your Treasure Go?</h3>
+                <p>Your picture is now saved on the computer! It usually goes to a special folder called <strong>"Downloads"</strong>.</p>
+                <p>Ask your grown-up helper: <strong>"Can you help me find my picture in the Downloads folder?"</strong> They know where to look!</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Now You Can Use Your Picture! 🎉</h2>
+        <div class="steps">
+            <div class="step-card">
+                <h3 class="step-title"><i class="fas fa-laptop icon"></i> Open It</h3>
+                <p>Double-click the file to look at it!</p>
+            </div>
+            
+            <div class="step-card">
+                <h3 class="step-title"><i class="fas fa-paint-brush icon"></i> Use It</h3>
+                <p>Drag it into your school project (like Google Slides, PowerPoint, Word), your drawing program, or print it! Ask your helper how to do this part.</p>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Remember the Magic Rules ✨</h2>
+        <div class="rules">
+            <div class="rule">
+                <h3 class="rule-title"><i class="fas fa-hands-helping"></i> Helper First</h3>
+                <p>Always have a grown-up with you when using Freepik.</p>
+            </div>
+            
+            <div class="rule">
+                <h3 class="rule-title"><i class="fas fa-gift"></i> FREE Only</h3>
+                <p>Only download pictures that clearly say <strong>FREE</strong>.</p>
+            </div>
+            
+            <div class="rule">
+                <h3 class="rule-title"><i class="fas fa-mouse-pointer"></i> Click Carefully</h3>
+                <p>Ask before clicking download buttons and avoid clicking ads or "Premium" stuff.</p>
+            </div>
+            
+            <div class="rule">
+                <h3 class="rule-title"><i class="fas fa-heart"></i> Say Thanks</h3>
+                <p>If your helper says it's okay, you might be able to leave a little "Like" ❤️ on the picture page for the artist.</p>
+            </div>
+        </div>
+        
+        <div class="for-grownups">
+            <h2><i class="fas fa-user-graduate"></i> For Grown-Up Helpers</h2>
+            <div class="tips">
+                <div class="tip">
+                    <h3><i class="fas fa-eye"></i> Supervision is Key</h3>
+                    <p>Actively monitor the child's browsing. Freepik contains ads and premium content.</p>
+                </div>
+                
+                <div class="tip">
+                    <h3><i class="fas fa-user-circle"></i> Account Consideration</h3>
+                    <p>While not strictly necessary for free downloads, creating a free account can manage downloads slightly better (and avoids repeated captchas), but requires an email.</p>
+                </div>
+                
+                <div class="tip">
+                    <h3><i class="fas fa-file-alt"></i> Explain Licensing</h3>
+                    <p>Briefly explain the child needs to credit the author if required (many free Freepik items require attribution - check the license info). Keep it simple: "We need to say who drew this picture."</p>
+                </div>
+                
+                <div class="tip">
+                    <h3><i class="fas fa-ad"></i> Ad Awareness</h3>
+                    <p>Point out common ad placements and teach them not to click anything flashing or saying "Download" except the specific Freepik download button for their chosen free resource.</p>
+                </div>
+                
+                <div class="tip">
+                    <h3><i class="fas fa-folder"></i> Folder Management</h3>
+                    <p>Help them locate the downloaded file (usually PNG, JPG, or sometimes SVG) in the Downloads folder.</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Have tons of fun finding amazing pictures on your Freepik adventures! 🚀🎨🦖</p>
+        </footer>
+    </div>
+</body>
+</html>
